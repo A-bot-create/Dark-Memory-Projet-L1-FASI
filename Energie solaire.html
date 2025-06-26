@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Énergie Solaire</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo dark memory.png" type="image/x-icon" />
+  <link href="Panneau solaire.jpg" rel="icon" type="image/x-icon">
+  <style>
+    img {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 10px;
+    }
+    img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    .image-texte {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .image-texte img {
+      width: 300px;
+    }
+    .image-texte .texte {
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .image-texte {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-texte img {
+        width: 100%;
+      }
+      .image-texte .texte {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Dark Memory</div>
+    <div class="nav-links">
+      <a href="Accueil.html" title="Retour à l'accueil">&#8592; Retour</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>L'Énergie Solaire : Gratuite, Renouvelable, Durable</h1>
+      <p>Découvrez comment capter le pouvoir du soleil pour produire votre propre électricité.</p>
+    </div>
+  </section>
+
+  <!-- Importance de l'énergie solaire en RDC -->
+  <section class="section-info">
+    <div class="container">
+      <h2>L'importance de l'énergie solaire en République Démocratique du Congo</h2>
+      <div class="image-texte">
+        <img src="Panneau solaire.jpg" alt="Soleil en RDC">
+        <div class="texte">
+          <ul>
+            <li>La RDC bénéficie d’un ensoleillement abondant tout au long de l’année, ce qui en fait une zone idéale pour exploiter l’énergie solaire.</li>
+            <li>Une centrale solaire bien placée peut fournir de l’électricité à des zones rurales qui n'ont aucun accès au réseau national.</li>
+            <li>L'énergie solaire est propre, elle ne produit pas de pollution ni de gaz à effet de serre.</li>
+            <li>Elle permet une autonomie énergétique, en réduisant la dépendance aux carburants fossiles importés.</li>
+            <li>Elle peut contribuer à l’industrialisation locale grâce à une alimentation électrique stable.</li>
+            <li>Elle améliore la vie des populations (éclairage, réfrigération des médicaments, cuisson, etc.).</li>
+            <li>Elle favorise la création d’emplois dans l’installation, la maintenance et la gestion des systèmes solaires.</li>
+            <li>Elle réduit les coûts d’exploitation des entreprises grâce à l’autoproduction d’énergie.</li>
+            <li>Elle offre une solution rapide à mettre en œuvre comparée à la construction de barrages.</li>
+            <li>Elle permet la scolarisation en fournissant de l’éclairage dans les écoles et foyers.</li>
+            <li>Elle renforce la résilience des communautés face aux coupures de courant fréquentes.</li>
+            <li>Elle soutient le développement de l’agriculture grâce à des systèmes d’irrigation alimentés au solaire.</li>
+            <li>Elle permet de charger des téléphones et outils numériques dans les zones enclavées.</li>
+            <li>Elle peut être installée en mode décentralisé ou à petite échelle dans les villages.</li>
+            <li>Elle encourage les initiatives locales et les innovations technologiques congolaises.</li>
+            <li>Elle réduit les risques liés aux incendies dus aux lampes à pétrole ou bougies.</li>
+            <li>Elle promeut une transition énergétique respectueuse de l’environnement.</li>
+            <li>Elle est durable : les panneaux solaires peuvent durer plus de 25 ans.</li>
+            <li>Elle valorise les toitures et espaces inutilisés dans les centres urbains.</li>
+            <li>Elle représente un investissement stratégique pour l’avenir énergétique du pays.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types de panneaux solaires -->
+  <section class="section-info">
+    <div class="container">
+      <h2>Types de panneaux solaires</h2>
+      <div class="image-texte">
+        <img src="panneau thermique.jpg" alt="Types de panneaux solaires">
+        <div class="texte">
+          <p>Il existe principalement trois types de panneaux solaires :</p>
+          <ul>
+            <li><strong>Panneaux photovoltaïques :</strong> convertissent la lumière du soleil en électricité. Très répandus, efficaces pour les toitures ou installations isolées.</li>
+            <li><strong>Panneaux solaires thermiques :</strong> captent la chaleur du soleil pour chauffer de l’eau. Utiles pour les douches ou systèmes sanitaires.</li>
+            <li><strong>Panneaux hybrides :</strong> combinent les deux technologies pour produire à la fois de l’électricité et de la chaleur.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réseau solaire en RDC -->
+  <section class="section-info">
+    <div class="container">
+      <h2>Créer un réseau d'énergie solaire en RDC</h2>
+      <div class="image-texte">
+        <img src="reseau solaire.jpg" alt="Réseau solaire en RDC">
+        <div class="texte">
+          <p>Mettre en place un réseau solaire en RDC nécessite :</p>
+          <ul>
+            <li>L'identification des zones à forte demande énergétique mais non connectées au réseau national (villages, zones agricoles, écoles isolées).</li>
+            <li>La mise en place de micro-réseaux solaires (mini-grids) avec stockage (batteries) pour une alimentation 24h/24.</li>
+            <li>La formation de techniciens locaux pour l’installation et la maintenance des systèmes.</li>
+            <li>L’intégration de financements publics et privés pour soutenir les infrastructures solaires.</li>
+            <li>L’utilisation de solutions mobiles (kits solaires individuels) pour les ménages isolés.</li>
+            <li>Le développement de centrales solaires régionales interconnectées avec les réseaux urbains.</li>
+            <li>L’adaptation des installations aux réalités climatiques et logistiques de chaque province.</li>
+            <li>L’encouragement des politiques nationales favorables à l’investissement solaire décentralisé.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
