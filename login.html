@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Dark Memory</title>
+  <link rel="icon" href="logo dark memory.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Playfair Display', serif;
+    }
+
+    body {
+      background-color: #a9e0c56f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .block-se-connecter {
+      background-color: #70a78e;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+
+    .block-se-connecter h2 {
+      color: #fff;
+      margin-bottom: 25px;
+    }
+
+    .input-field {
+      background-color: transparent;
+      border: 1px solid #000000;
+      border-radius: 6px;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      width: 100%;
+      color: #fff;
+    }
+
+    .email-bouton::placeholder {
+      color: #0a0a0a;
+    }
+
+    .motdepasse-bouton::placeholder {
+      color: #0a0a0a;
+    }
+
+    .block-se-connecter a {
+      color: #191a19;
+      font-size: 0.9em;
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+
+    .login-btn {
+      background-color: #49998cad;
+      border: none;
+      color: #fff;
+      padding: 10px 15px;
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #0156b73f;
+    }
+
+    .bottom-text {
+      margin-top: 20px;
+      color: #ffffff;
+      font-size: 0.9em;
+    }
+
+    .bottom-text a {
+      color: #0093c9;
+      text-decoration: none;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.8em;
+      color: #eee;
+    }
+
+    .footer span {
+      color: rgb(129, 104, 104);
+    }
+
+    .footer strong {
+      color: #339d65;
+    }
+  </style>
+</head>
+<body>
+  <div class="block-se-connecter">
+    <h2>Formulaire de connexion</h2>
+    <input type="email" class="email-bouton" placeholder="Adresse e-mail" required />
+    <input type="password" class="motdepasse-bouton" placeholder="Mot de passe" required />
+    <a href="#">Mot de passe oublié?</a>
+    <button class="login-btn">Se connecter</button>
+    <div class="bottom-text">
+      Se souvenir de moi <a href="#">Inscivez-vous</a>
+    </div>
+    <div class="footer">
+      Personnalisé par <strong>Ben Mathe</strong>
+    </div>
+  </div>
+</body>
+</html>
