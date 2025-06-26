@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="logo dark memory.png" type="image/x-icon" />
+<title>Dark Pay Elec - Smart Form</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f9fef9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 15px;
+    color: #2c2c2c;
+  }
+
+  .smart-form-container {
+    background: #fff;
+    border-radius: 16px;
+    width: 360px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    padding: 44px 36px 48px;
+  }
+
+  .smart-form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #81c9a4;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 0.03em;
+  }
+
+  /* Barre de progression */
+  .progress-bar {
+    height: 14px;
+    background: #d4f0d7;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .progress-bar .fill {
+    width: 100%;
+    background: #2b7a3e33;
+    height: 100%;
+  }
+
+  /* Texte montant et mois */
+  .payment-amount {
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .payment-month {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #466b3f;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* Form labels */
+  label {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #2c2c2c;
+  }
+
+  /* Inputs */
+  input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    margin-bottom: 28px;
+    font-family: 'Playfair Display', serif;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 10px #4caf5080;
+  }
+
+  /* Mobile Money group */
+  .mobile-money-group {
+    margin-bottom: 40px;
+  }
+
+  .mobile-money-group legend {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: #2c2c2c;
+  }
+
+  .mobile-money-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .mobile-money-option input[type="radio"] {
+    accent-color: #4c99af;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+  /* Logos placeholders (RDC Mobile Money logos) */
+  .mobile-money-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+
+  .orange-money {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Orange_logo.svg/256px-Orange_logo.svg.png');
+  }
+
+  .airtel-money {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Airtel_logo.svg/256px-Airtel_logo.svg.png');
+  }
+
+  .mvola-money {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_Mvola.svg/256px-Logo_Mvola.svg.png');
+  }
+
+  /* Bouton valider */
+  .btn-validate {
+    display: block;
+    width: 100%;
+    background-color: #4caf5080;
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 16px 0;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(76,175,80,0.6);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.25s ease;
+    user-select: none;
+  }
+  .btn-validate:hover {
+    background-color: #68acd0;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(58,135,42,0.7);
+  }
+
+  /* Responsive */
+  @media (max-width: 420px) {
+    .smart-form-container {
+      width: 100%;
+      padding: 36px 24px 40px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<form class="smart-form-container" id="darkPayElecForm" novalidate>
+  <h1 class="smart-form-title">Dark Pay Elec</h1>
+
+  <div class="progress-bar" aria-label="Progression du paiement">
+    <div class="fill"></div>
+  </div>
+
+  <p class="payment-amount" aria-live="polite">Montant à payer : <strong>25 000 CDF</strong></p>
+  <p class="payment-month">Mois concerné : Juin 2025</p>
+
+  <label for="compteur">Numéro du compteur</label>
+  <input type="text" id="compteur" name="compteur" placeholder="Ex : 123456789" required autocomplete="off" aria-required="true" />
+
+  <label for="nom">Nom du client</label>
+  <input type="text" id="nom" name="nom" placeholder="Ex : Jean Mukendi" required autocomplete="off" aria-required="true" />
+
+  <fieldset class="mobile-money-group" aria-label="Choix du moyen de paiement Mobile Money">
+    <legend>Choisissez Mobile Money</legend>
+
+    <label class="mobile-money-option" for="orange_money">
+      <input type="radio" id="orange_money" name="mobilemoney" value="Orange Money" required />
+      <span class="mobile-money-logo orange-money" aria-hidden="true"></span>
+      Orange Money
+    </label>
+
+    <label class="mobile-money-option" for="airtel_money">
+      <input type="radio" id="airtel_money" name="mobilemoney" value="Airtel Money" />
+      <span class="mobile-money-logo airtel-money" aria-hidden="true"></span>
+      Airtel Money
+    </label>
+
+    <label class="mobile-money-option" for="mvola_money">
+      <input type="radio" id="mvola_money" name="mobilemoney" value="Mvola" />
+      <span class="mobile-money-logo mvola-money" aria-hidden="true"></span>
+      Mvola
+    </label>
+
+  </fieldset>
+
+  <button type="submit" class="btn-validate" aria-label="Valider et effectuer le paiement">
+    Valider &amp; Payer
+  </button>
+</form>
+
+<script>
+  const form = document.getElementById('darkPayElecForm');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const compteur = form.compteur.value.trim();
+    const nom = form.nom.value.trim();
+    const method = form.mobilemoney.value;
+
+    if (!compteur || !nom || !method) {
+      alert("Merci de remplir tous les champs et de sélectionner un moyen de paiement.");
+      return;
+    }
+    alert(`Paiement de 25 000 CDF via ${method} en cours pour ${nom} (compteur ${compteur}).`);
+  });
+</script>
+
+</body>
+</html>
