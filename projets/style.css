@@ -13,11 +13,12 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
+/* Navbar avec menu hamburger responsive */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permet le retour à la ligne*/
   padding: 20px 40px;
   background-color: #f3fef3;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -33,16 +34,28 @@ body {
   margin-top: auto;
 }
 
+.logo-img {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 10%;
+  margin-right: 10px;
+}
+
 .logo {
   font-size: 1.8em;
   font-weight: bold;
   color: #2c2c2c;
+  margin-right: 30px;
+  white-space: nowrap;
 }
-.logo-img{
-  width: 50px;
-  height: 50px;
-  border-radius: 10%;
-  margin-right: 10px;
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-links a {
@@ -56,27 +69,107 @@ body {
 
 .nav-links a:hover {
   color:  #49998cad;
-  text-shadow: 0 0 10px  #49998cad;
+  text-shadow: 0 0 10px #023337;
 }
 
-/* Boutons se connecter*/
-.nav-buttons .login {
-  display: inline-block;
-  margin-left: 10px;
-  padding: 10px 18px;
-  border: none;
-  background-color:#49998cad;
+.nav-buttons {
+  margin-left: 20px;
+  min-width: 120px; /* Pour éviter le chevauchement */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn.login {
+  background: #023337;
   color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 4px;
 }
 
-.nav-buttons .login:hover {
+.btn.login:hover {
   box-shadow: 0 0 12px  #49998cad;
   transform: translateY(-2px);
 }
+
+/* Menu hamburger */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: #222;
+  margin-right: 10px;
+  margin-left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+}
+
+.burger .bar {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 3px 0;
+  background-color: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background:  #c0e6b9;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    z-index: 100;
+  }
+  
+  .nav-links a {
+    display: inline-flex;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links a:hover {
+    color:  #023337;
+    text-shadow: 0 0 10px  #023337;
+  }
+  .burger {
+    display: flex;
+  }
+  .logo-img, .logo {
+    margin-right: 0;
+  }
+  .btn.login {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-left: 0;
+    z-index: 101;
+  }
+}
+
+/* ...existing code... */
 
 /* Hero Section */
 .hero {
@@ -141,32 +234,7 @@ body {
     transform: translateY(0);
   }
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  .nav-links a {
-    margin: 10px 0;
-  }
-
-  .hero h1 {
-    font-size: 2em;
-  }
-
-  .hero p {
-    font-size: 1em;
-  }
-}
+/* Sections */
 .stats-section, .funds-section, .organizations-section, .impact-section {
   margin-top: 2rem;
   padding: 1.0rem;

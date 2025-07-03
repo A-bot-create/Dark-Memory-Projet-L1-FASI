@@ -11,9 +11,13 @@
 <body>
 
 <header class="navbar">
-  <img src="images/logo dark memory.png" alt="Logo Dark Memory" class="logo-img" width="70" height="auto">
+    <button class="burger" id="burger-menu" aria-label="Ouvrir le menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
   <div class="logo">Dark Memory</div>
-  <nav class="nav-links">
+  <nav class="nav-links" id="nav-links">
     <a href="Accueil.html">Accueil</a>
     <a href="Congo River.html">Congo River</a>
     <a href="Energy.html">Énergie</a>
@@ -524,6 +528,13 @@
   </div>
 </footer>
 <!--Script-->
+<script>
+  const burger = document.getElementById('burger-menu');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 <script src="script.js"></script>
 </body>
 </html>

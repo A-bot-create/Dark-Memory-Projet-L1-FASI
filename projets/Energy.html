@@ -12,10 +12,14 @@
 </head>
 
 <body>
-    <header class="navbar">
-  <img src="images/logo dark memory.png" alt="Logo Dark Memory" class="logo-img" width="70" height="auto">
+  <header class="navbar">
+    <button class="burger" id="burger-menu" aria-label="Ouvrir le menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
   <div class="logo">Dark Memory</div>
-  <nav class="nav-links">
+  <nav class="nav-links" id="nav-links">
     <a href="Accueil.html">Accueil</a>
     <a href="Congo River.html">Congo River</a>
     <a href="but.html">But</a>
@@ -37,7 +41,7 @@
       L’énergie est une grandeur physique essentielle qui permet de réaliser un travail, de produire de la chaleur, de faire fonctionner des machines ou d’éclairer des espaces. 
       Elle existe sous plusieurs formes : énergie mécanique, thermique, électrique, chimique, nucléaire, solaire, éolienne, hydraulique, etc. 
       Dans la nature, l’énergie est partout : elle anime le vent, les rivières, le rayonnement solaire, et elle est aussi stockée dans les combustibles fossiles comme le charbon, le pétrole et le gaz naturel.
-    </p>
+    </p>  
 
     <h2>L’importance de l’énergie</h2>
     <p>
@@ -390,6 +394,14 @@
    <p>Dark Memory core reserved since 2025</p>
   </div>
 </footer>
+<!--burger-->
+<script>
+  const burger = document.getElementById('burger-menu');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 
 <script>
   function toggleFiche() {

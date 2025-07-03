@@ -5,28 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>À propos - Dark Memory</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo dark memory.png" type="image/x-icon" />
+  <link rel="icon" href="logo dark memory.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="navbar">
-  <img src="images/logo dark memory.png" alt="Logo Dark Memory" class="logo-img" width="70" height="auto">
+  <button class="burger" id="burger-menu" aria-label="Ouvrir le menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
   <div class="logo">Dark Memory</div>
-  <nav class="nav-links">
-    <a href="Accueil.html">Accueil</a>
-    <a href="Congo River.html">Congo River</a>
+  <nav class="nav-links" id="nav-links">
+    <a href="accueil.html">Accueil</a>
+    <a href="congo-river.html">Congo River</a>
     <a href="Energy.html">Énergie</a>
     <a href="but.html">But</a>
     <a href="projet.html">Projets</a>
     <a href="conception.html">Conception</a>
+    <a href="apropos.html">À propos</a>
   </nav>
-
   <div class="nav-buttons">
-    <button class="btn login" onclick ="window.location.href='login.html'">Se connecter</button>
+    <button class="btn login" onclick="window.location.href='login.html'">Se connecter</button>
   </div>
 </header>
-
+  
 <main class="section-info">
   <div class="container">
     <h1>À propos de notre initiative</h1>
@@ -40,11 +44,10 @@
     <h2>La réalisation</h2>
     <p>
       Je voulais créer ce site pour sensibiliser le public à l'importance de l'énergie hydroélectrique dans la région, et pour encourager les investissements dans des projets durables qui respectent l'environnement et les communautés locales.
-
     </p>
 
     <h2>Engagements</h2>
-    <img src="images/rdc.jpg" alt="tss" style="width: 270px; height: 250px; margin-top: auto;">
+    <img src="./images/rdc.jpg" alt="tss" style="width: 270px; height: 250px; margin-top: auto;">
     <p>
       Je m'engage à fournir des informations précises et à jour sur les projets énergétiques dans le bassin du Congo, en mettant l'accent sur la transparence et la durabilité. Mon objectif est de contribuer à un avenir énergétique plus équitable et respectueux de l'environnement pour toute l'Afrique centrale.
       Et je suis convaincu que, grâce à la collaboration et à l'innovation, nous pouvons transformer le potentiel du fleuve Congo en une réalité énergétique bénéfique pour tous. A travers ce projet je voulais contribuer a l'evolution dans le secteur de l'energie en RDC et montrer ce que peut representer le leuve congo dans son emplcement geographique et stratégique.
@@ -52,10 +55,10 @@
     </p>
   </div>
 </main>
-<footer class="footer">
+<footer class="footer"></footer>
   <div class="footer-container">
     <div class="footer-block">
-      <img src="images/logo dark memory.png" alt="Logo" class="footer-logo">
+      <img src="./images/logo dark memory.png" alt="Logo" class="footer-logo">
     </div>
 
     <div class="footer-block">
@@ -70,7 +73,6 @@
       <ul>
         <li>Site dynamique</li>
         <li>education-energie</li>
-        
       </ul>
     </div>
 
@@ -94,7 +96,13 @@
    <p>Dark Memory core reserved since 2025</p>
   </div>
 </footer>
-
+<script>
+  const burger = document.getElementById('burger-menu');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 <script src="script.js"></script>
 </body>
 </html>
